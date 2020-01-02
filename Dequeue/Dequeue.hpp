@@ -1,5 +1,12 @@
 #pragma once
 
+/*
+------------------------------------------------------------
+	https://github.com/TripppleG/DeQueue-SDP-Project
+------------------------------------------------------------
+*/
+
+
 template <class T>
 class Dequeue
 {
@@ -34,6 +41,11 @@ public:
 	void PopBack();
 	T Front() const;
 	T Back() const;
+
+	int GetStartIndex() const;
+	int GetEndIndex() const;
+	int GetCapacity() const;
+	int GetSize() const;
 };
 
 template<class T>
@@ -109,7 +121,7 @@ inline void Dequeue<T>::Resize(const bool downOrUpSize, const bool BackOrFront)
 template<class T>
 inline Dequeue<T>::Dequeue()
 {
-	capacity = 4; // TODO: Change the size to 256
+	capacity = 4;
 	size = 0;
 	arr = new T[capacity];
 	startIndex = endIndex = -1;
@@ -263,4 +275,28 @@ inline T Dequeue<T>::Back() const
 		throw std::runtime_error("Empty Queue!");
 	}
 	return arr[endIndex];
+}
+
+template<class T>
+inline int Dequeue<T>::GetStartIndex() const
+{
+	return startIndex;
+}
+
+template<class T>
+inline int Dequeue<T>::GetEndIndex() const
+{
+	return endIndex;
+}
+
+template<class T>
+inline int Dequeue<T>::GetCapacity() const
+{
+	return capacity;
+}
+
+template<class T>
+inline int Dequeue<T>::GetSize() const
+{
+	return size;
 }

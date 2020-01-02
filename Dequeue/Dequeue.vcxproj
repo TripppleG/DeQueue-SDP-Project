@@ -139,9 +139,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Dequeue.hpp" />
+    <ClInclude Include="doctest.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="UnitTests.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
